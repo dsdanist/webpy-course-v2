@@ -18,6 +18,7 @@
       #banner {
         width: 100%;
         height: 360px;
+        margin-bottom:16px;
       }
 
       h2 {
@@ -41,14 +42,23 @@
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img id ="banner" src="static/banner_web.jpg" height="320">
     <div id="container">
       <h1>Aden Careers</h1>
-      <img id ="banner" src="static/banner_web.jpg" height="320">
-      
-      <h2>About Careers</h2>
-      <p class="bodytext">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    <div class="row style="margin-bottom:16px">
+      <div class="col-md-6">
+      <p class="bodytext">
+        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
       </p>
-      <h2>Open Positions</h2>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/people.jpeg" style="height:320px;border-radius:4px">
+      </div>
+    </div>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    </div>
+      
       <div class="bodytext">
         {% for job in jobs%}
           {% include 'jobitem.html' %}
@@ -58,5 +68,6 @@
       <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
       </div>
     </div>  
+    {% include 'footer.html' %}
   </body>  
 </html>
